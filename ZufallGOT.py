@@ -1,16 +1,18 @@
 import random
-characters = ['Cersei','Jon Schnee','Jaime', 'Arya','Sansa','Kleinfinger','Daenerys','Tyrion','Margaery']
+import json
+with open("characters.json") as characterfile:
+	characters = json.load(characterfile)
 textbausteine = [ 'ist ein Kind von','stirbt.','kriegt bald ein Kind.', 'ist in Wahrheit ein Tagaryen.']
 
-chara = random.randint(0,8)
-charakter = characters[chara]
-charazwei = random.randint(0,8)
-charakterzwei = characters[charazwei]
-text = random.randint(0,3)
-textbaustein = textbausteine[text]
-if text == 0:
-    print(charakter + ' ' + textbaustein + ' '+ charakterzwei)
+
+charakter = random.choice(characters)
+charakterzwei = random.choice(characters)
+textbaustein = random.choice(textbausteine)
+
+
+if textbaustein[-1] != ".":
+    print("{0} {1} {2}.".format(charakter, textbaustein, charakterzwei))
 else:
-    print(charakter + ' ' + textbaustein)
+    print("{0} {1}".format(charakter, textbaustein))
     
     
