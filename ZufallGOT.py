@@ -2,7 +2,7 @@ import random
 import json
 with open("characters.json") as characterfile:
 	characters = json.load(characterfile)
-textbausteine = [ 'ist ein Kind von','stirbt.','kriegt bald ein Kind.', 'ist in Wahrheit ein Tagaryen.']
+textbausteine = [ 'ist ein Kind von','stirbt.','kriegt bald ein Kind.', 'ist in Wahrheit ein Tagaryen.','wird bis zum Ende leben', 'wechselt die Seite']
 
 
 charakter = random.choice(characters)
