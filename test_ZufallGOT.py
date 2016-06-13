@@ -13,8 +13,8 @@ def test_load_characters(filename):
 
 
 @given(lists(text()), lists(text()))
-def test_generate_spoiler(characters, filenames):
+def test_generate_spoiler(characters, test_blocks):
     try:
-        spoiler = generate_spoiler(characters, filenames)
+        spoiler = generate_spoiler(characters, test_blocks)
     except AssertionError:
         reject()
