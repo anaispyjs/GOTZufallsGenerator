@@ -1,6 +1,7 @@
 import random
 import json
 import os
+import sys
 
 
 def load_characters(filename="characters.json"):
@@ -24,7 +25,7 @@ def get_text_blocks():
 
 
 def get_str_if_unicode(text):
-    if type(text) == unicode:
+    if sys.version_info[0] == 2 and type(text) == unicode:
         return text.encode("utf-8")
 
 
