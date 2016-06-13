@@ -26,7 +26,8 @@ def get_text_blocks():
 
 def get_str_if_unicode(text):
     if sys.version_info[0] == 2 and type(text) == unicode:
-        return text.encode("utf-8")
+        text = text.encode("utf-8")
+    return text
 
 
 def generate_spoiler(characters, text_blocks):
