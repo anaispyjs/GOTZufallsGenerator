@@ -3,8 +3,8 @@ python:
   - "2.6"
   - "2.7"
 before_script:
-  - pip install -r test_requirements.txt --use-mirrors
+  - pip install -r test_requirements.txt
 script:
-  - py.test --doctest-modules --pep8 coveralls --cov --cov-report term-missing --hypothesis-profile ci
+  - py.test --doctest-modules --pep8 --cov --cov-report term-missing --hypothesis-profile ci
 after_success:
   - coveralls
