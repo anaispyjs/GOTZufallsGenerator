@@ -1,2 +1,2 @@
 [run]
-omit = virtualenv/*, env/*, env2/*
+omit = virtualenv/*, env/*, env2/*, /home/travis/virtualenv/*
