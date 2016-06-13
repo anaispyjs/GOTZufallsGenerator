@@ -1,6 +1,7 @@
 from hypothesis import given, reject, example
 from hypothesis.strategies import text, lists, sampled_from
-from ZufallGOT import load_characters, generate_spoiler, get_str_if_unicode
+from ZufallGOT import load_characters, generate_spoiler, get_str_if_unicode, \
+                        get_text_blocks
 
 
 @given(sampled_from(["characters.json", "characters.py",
@@ -14,6 +15,7 @@ def test_load_characters(filename):
 
 
 @given(lists(text()), lists(text()))
+@example(get_text_blocks(), load_characters())
 def test_generate_spoiler(characters, text_blocks):
     try:
         spoiler = generate_spoiler(characters, text_blocks)
