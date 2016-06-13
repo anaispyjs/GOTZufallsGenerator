@@ -17,11 +17,12 @@ def load_characters(filename="data/characters.json"):
 
 
 def get_text_blocks():
-    text_blocks = ['ist ein Kind von','stirbt.',
-                    'kriegt bald ein Kind.',
-                    'ist in Wahrheit ein Tagaryen.',
-                    'wird bis zum Ende leben',
-                    'wechselt die Seite']
+    text_blocks = ['ist ein Kind von',
+                   'stirbt.',
+                   'kriegt bald ein Kind.',
+                   'ist in Wahrheit ein Tagaryen.',
+                   'wird bis zum Ende leben',
+                   'wechselt die Seite']
     return text_blocks
 
 
