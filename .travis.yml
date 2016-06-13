@@ -3,7 +3,7 @@ python:
   - "2.7"
   - "3.5"
 before_script:
-  - pip install -r test_requirements.txt
+  - pip install -U -r test_requirements.txt
 script:
   - py.test --doctest-modules --pep8 --cov --cov-report term-missing --hypothesis-profile ci
 after_success:
