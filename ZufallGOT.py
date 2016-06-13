@@ -4,20 +4,13 @@ import os
 
 
 def load_characters(filename="characters.json"):
-    isfile = False
-    try:
-        isfile = os.path.isfile(filename)
-    except ValueError:
-        pass
-
     characters = []
 
-    if isfile:
-        with open(filename) as characterfile:
-            try:
-                characters = json.load(characterfile)
-            except ValueError:
-                pass
+    with open(filename) as characterfile:
+        try:
+            characters = json.load(characterfile)
+        except ValueError:
+            pass
 
     return characters
 
@@ -30,14 +23,19 @@ def get_text_blocks():
     return text_blocks
 
 
+def get_str_if_unicode(text):
+    if type(text) == unicode:
+        return text.encode("utf-8")
+
+
 def generate_spoiler(characters, text_blocks):
 
     assert len(characters) >= 1, "You need to pass at least one character"
     assert len(text_blocks) >= 1, "You need to pass at least one text block"
 
-    charakter = random.choice(characters)
-    charakterzwei = random.choice(characters)
-    textbaustein = random.choice(text_blocks)
+    charakter = get_str_if_unicode(random.choice(characters))
+    charakterzwei = get_str_if_unicode(random.choice(characters))
+    textbaustein = get_str_if_unicode(random.choice(text_blocks))
 
     if len(textbaustein) > 0 and textbaustein[-1] != ".":
         print("{0} {1} {2}.".format(charakter, textbaustein, charakterzwei))
