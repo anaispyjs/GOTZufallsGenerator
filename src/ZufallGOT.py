@@ -4,7 +4,7 @@ import os
 import sys
 
 
-def load_characters(filename="characters.json"):
+def load_characters(filename="data/characters.json"):
     characters = []
 
     with open(filename) as characterfile:
