@@ -5,6 +5,6 @@ python:
 before_script:
   - pip install -U -r test_requirements.txt
 script:
-  - py.test --doctest-modules --pep8 --cov --cov-report term-missing --hypothesis-profile ci --ignore virtualenv
+  - py.test --doctest-modules --pep8 --cov --cov-report term-missing --hypothesis-profile ci --ignore /home/travis/virtualenv
 after_success:
   - coveralls
