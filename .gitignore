@@ -1,0 +1,7 @@
+.cache/
+env/
+.hypothesis/
+__pycache__/
+*.pyc
+.coverage
+env2/
